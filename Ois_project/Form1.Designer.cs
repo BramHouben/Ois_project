@@ -1,6 +1,6 @@
 ﻿namespace Ois_project
 {
-    partial class Form1
+    partial class Inlogform
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnTrainer = new System.Windows.Forms.Button();
+            this.btnJeugd = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // btnTrainer
+            // 
+            this.btnTrainer.Location = new System.Drawing.Point(40, 293);
+            this.btnTrainer.Name = "btnTrainer";
+            this.btnTrainer.Size = new System.Drawing.Size(153, 70);
+            this.btnTrainer.TabIndex = 0;
+            this.btnTrainer.Text = "Trainer";
+            this.btnTrainer.UseVisualStyleBackColor = true;
+            // 
+            // btnJeugd
+            // 
+            this.btnJeugd.Location = new System.Drawing.Point(544, 293);
+            this.btnJeugd.Name = "btnJeugd";
+            this.btnJeugd.Size = new System.Drawing.Size(157, 70);
+            this.btnJeugd.TabIndex = 1;
+            this.btnJeugd.Text = "Jeugd";
+            this.btnJeugd.UseVisualStyleBackColor = true;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(300, 293);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(163, 70);
+            this.btnAdmin.TabIndex = 2;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // Inlogform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 528);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.BackgroundImage = global::Ois_project.Properties.Resources.Archieffoto_Omroep_West;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(777, 482);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.btnJeugd);
+            this.Controls.Add(this.btnTrainer);
+            this.Name = "Inlogform";
+            this.Text = "inlog";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnTrainer;
+        private System.Windows.Forms.Button btnJeugd;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 
