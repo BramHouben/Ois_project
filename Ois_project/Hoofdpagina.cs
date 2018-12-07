@@ -16,5 +16,11 @@ namespace Ois_project
         {
             InitializeComponent();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Admin openform = new Admin();
+            openform.Show();
+        }
     }
 }

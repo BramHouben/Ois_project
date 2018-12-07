@@ -7,7 +7,7 @@ namespace Ois_project
 {
     internal class Connectie
     {
-        private MySqlConnection connection;
+        private static MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -27,6 +27,7 @@ namespace Ois_project
 
         public MySqlConnection connectiestring()
         {
+            //this.connection = new MySqlConnection();
             return connection;
         }
 

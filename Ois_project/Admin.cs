@@ -20,7 +20,8 @@ namespace Ois_project
 
         private void btnTeamToevoegen_Click(object sender, EventArgs e)
         {
-            
+             PopupTeam openform = new PopupTeam();
+            openform.Show();
         }
     }
 }
