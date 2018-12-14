@@ -50,6 +50,7 @@
             this.btnJeugd.TabIndex = 1;
             this.btnJeugd.Text = "Jeugd";
             this.btnJeugd.UseVisualStyleBackColor = true;
+            this.btnJeugd.Click += new System.EventHandler(this.btnJeugd_Click);
             // 
             // btnAdmin
             // 

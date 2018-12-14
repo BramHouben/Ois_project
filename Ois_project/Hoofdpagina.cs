@@ -22,5 +22,10 @@ namespace Ois_project
             Admin openform = new Admin();
             openform.Show();
         }
+
+        private void btnJeugd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

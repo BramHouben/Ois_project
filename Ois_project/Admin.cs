@@ -23,5 +23,11 @@ namespace Ois_project
              PopupTeam openform = new PopupTeam();
             openform.Show();
         }
+
+        private void btntrainer_aanmaken_Click(object sender, EventArgs e)
+        {
+            PopupTrainer openform = new PopupTrainer();
+            openform.Show();
+        }
     }
 }

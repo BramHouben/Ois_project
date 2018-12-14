@@ -78,9 +78,16 @@
     <Compile Include="PopupTeam.Designer.cs">
       <DependentUpon>PopupTeam.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupTrainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupTrainer.Designer.cs">
+      <DependentUpon>PopupTrainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Team.cs" />
+    <Compile Include="Trainer.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupTeam.resx">
       <DependentUpon>PopupTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupTrainer.resx">
+      <DependentUpon>PopupTrainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

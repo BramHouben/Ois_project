@@ -69,6 +69,7 @@ namespace Ois_project
                 if (connection != null && connection.State == ConnectionState.Closed)
                 {
                     OpenConn();
+                    Console.WriteLine("connectie is heropend");
                 }
                 return true;
             }
