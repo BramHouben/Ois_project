@@ -30,5 +30,14 @@ namespace Ois_project
             command.CommandText = "INSERT INTO trainer (team_id, team_naam, team_aantal ) VALUES (null, @trainer_naam, @leeftijd, team_id)";
             command.ExecuteNonQuery();
         }
+
+        public DataSet selecttrainer()
+        {
+            DataSet sd = new DataSet();
+            MySqlDataAdapter adapter2 = new MySqlDataAdapter(
+            "SELECT trainer_naam, trainer_id from trainer", conn.connectiestring());
+            adapter2.Fill(sd);
+            return sd;
+        }
     }
 }

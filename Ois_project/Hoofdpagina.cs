@@ -27,5 +27,11 @@ namespace Ois_project
         {
 
         }
+
+        private void btnTrainer_Click(object sender, EventArgs e)
+        {
+            TrainerForm openform = new TrainerForm();
+            openform.Show();
+        }
     }
 }

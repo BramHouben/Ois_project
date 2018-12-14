@@ -41,6 +41,7 @@
             this.btnTrainer.TabIndex = 0;
             this.btnTrainer.Text = "Trainer";
             this.btnTrainer.UseVisualStyleBackColor = true;
+            this.btnTrainer.Click += new System.EventHandler(this.btnTrainer_Click);
             // 
             // btnJeugd
             // 
