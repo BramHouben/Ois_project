@@ -15,6 +15,7 @@ namespace Ois_project
             this.lbTrainer.DataSource = newTrainer.selecttrainer().Tables[0];
             this.lbTrainer.DisplayMember = "trainer_naam";
             this.lbTrainer.ValueMember = "trainer_id";
+            datagrid1.DataSource = newTrainer.tableleden();
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -23,6 +24,7 @@ namespace Ois_project
             Console.WriteLine(trainer);
             conn.CloseConnection();
             this.Close();
+
         }
     }
 }

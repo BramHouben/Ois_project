@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagrid1 = new System.Windows.Forms.DataGridView();
             this.lbTrainer = new System.Windows.Forms.ListBox();
             this.btnTest = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // datagrid1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 331);
-            this.dataGridView1.TabIndex = 0;
+            this.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid1.Location = new System.Drawing.Point(12, 107);
+            this.datagrid1.Name = "datagrid1";
+            this.datagrid1.Size = new System.Drawing.Size(703, 331);
+            this.datagrid1.TabIndex = 0;
             // 
             // lbTrainer
             // 
@@ -67,17 +67,17 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lbTrainer);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagrid1);
             this.Name = "TrainerForm";
             this.Text = "TrainerForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagrid1;
         private System.Windows.Forms.ListBox lbTrainer;
         private System.Windows.Forms.Button btnTest;
     }

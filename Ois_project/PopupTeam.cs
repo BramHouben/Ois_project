@@ -18,7 +18,6 @@ namespace Ois_project
 
             conn.OpenConn();
             newteam.insertTeam(tbTeam.Text, tbTeam_aantal.Text);
-
             conn.CloseConnection();
             this.Close();
 

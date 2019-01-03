@@ -79,5 +79,13 @@ namespace Ois_project
                 return false;
             }
         }
+        //public DataSet krijgenteams()
+        //{
+        //    DataSet ds = new DataSet();
+        //    MySqlDataAdapter adapter = new MySqlDataAdapter(
+        //    "SELECT team_id, team_naam from team", connection);
+        //    adapter.Fill(ds);
+        //    return ds;
+        //}
     }
 }
