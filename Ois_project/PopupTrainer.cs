@@ -29,7 +29,7 @@ namespace Ois_project
             //newtrainer.insertTrainer();
             if (result == true)
             {
-                MessageBox.Show("trainer niet ingevoegd");
+                MessageBox.Show("trainer niet ingevoegd omdat er al 3 trainers het team trainen");
             }
             else
             {
