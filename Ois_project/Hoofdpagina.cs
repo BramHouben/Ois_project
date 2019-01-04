@@ -25,7 +25,8 @@ namespace Ois_project
 
         private void btnJeugd_Click(object sender, EventArgs e)
         {
-
+            jeugd openform = new jeugd();
+            openform.Show();
         }
 
         private void btnTrainer_Click(object sender, EventArgs e)
