@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ois_project
@@ -19,9 +12,27 @@ namespace Ois_project
 
         private void btnRegistratie_Click(object sender, EventArgs e)
         {
-            Inlogregistratie inlog = new Inlogregistratie(tbGbNaam.Text, tbWw.Text);
-            inlog.registreren();
-            this.Close();
+            Connectie conn = new Connectie();
+            Inlogregistratie inlog = new Inlogregistratie(tbGbNaam.Text, tbWw.Text, tbNaam.Text);
+           
+
+            bool result = inlog.registreren();
+            if (result == true)
+            {
+                //inlog.registreren();
+                MessageBox.Show("Account aanmaken");
+                this.Close();
+                jeugd openform = new jeugd();
+                openform.Show();
+            }
+            else
+            {
+                MessageBox.Show("fout met registreren, foutcode");
+                tbGbNaam.Clear();
+                tbNaam.Clear();
+                tbWw.Clear();
+            }
+            conn.CloseConnection();
         }
     }
 }

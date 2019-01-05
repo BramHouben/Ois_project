@@ -30,6 +30,7 @@
         {
             this.btnTeamToevoegen = new System.Windows.Forms.Button();
             this.btntrainer_aanmaken = new System.Windows.Forms.Button();
+            this.btnAccVerwijder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTeamToevoegen
@@ -52,12 +53,23 @@
             this.btntrainer_aanmaken.UseVisualStyleBackColor = true;
             this.btntrainer_aanmaken.Click += new System.EventHandler(this.btntrainer_aanmaken_Click);
             // 
+            // btnAccVerwijder
+            // 
+            this.btnAccVerwijder.Location = new System.Drawing.Point(321, 13);
+            this.btnAccVerwijder.Name = "btnAccVerwijder";
+            this.btnAccVerwijder.Size = new System.Drawing.Size(138, 45);
+            this.btnAccVerwijder.TabIndex = 2;
+            this.btnAccVerwijder.Text = "Account verwijderen";
+            this.btnAccVerwijder.UseVisualStyleBackColor = true;
+            this.btnAccVerwijder.Click += new System.EventHandler(this.btnAccVerwijder_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(327, 77);
+            this.ClientSize = new System.Drawing.Size(505, 65);
+            this.Controls.Add(this.btnAccVerwijder);
             this.Controls.Add(this.btntrainer_aanmaken);
             this.Controls.Add(this.btnTeamToevoegen);
             this.Name = "Admin";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.Button btnTeamToevoegen;
         private System.Windows.Forms.Button btntrainer_aanmaken;
+        private System.Windows.Forms.Button btnAccVerwijder;
     }
 }

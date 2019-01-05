@@ -79,6 +79,18 @@ namespace Ois_project
                 return false;
             }
         }
+
+        public DataTable krijgenleden()
+        {
+            MySqlDataAdapter mysqldata = new MySqlDataAdapter("select * from lid", connection);
+            DataTable dtblLid = new DataTable();
+            mysqldata.Fill(dtblLid);
+
+            return dtblLid;
+        }
+
+    
+     
         //public DataSet krijgenteams()
         //{
         //    DataSet ds = new DataSet();

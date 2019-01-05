@@ -35,6 +35,8 @@
             this.btnRegistreer = new System.Windows.Forms.Button();
             this.tbGbNaam = new System.Windows.Forms.TextBox();
             this.tbWw = new System.Windows.Forms.TextBox();
+            this.Tekenbox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Tekenbox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGbnaam
@@ -72,15 +74,17 @@
             this.btnInlog.TabIndex = 3;
             this.btnInlog.Text = "Inloggen";
             this.btnInlog.UseVisualStyleBackColor = true;
+            this.btnInlog.Click += new System.EventHandler(this.btnInlog_Click);
             // 
             // btnRegistreer
             // 
-            this.btnRegistreer.Location = new System.Drawing.Point(169, 212);
+            this.btnRegistreer.Location = new System.Drawing.Point(181, 212);
             this.btnRegistreer.Name = "btnRegistreer";
             this.btnRegistreer.Size = new System.Drawing.Size(100, 23);
             this.btnRegistreer.TabIndex = 4;
             this.btnRegistreer.Text = "Registreren";
             this.btnRegistreer.UseVisualStyleBackColor = true;
+            this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
             // 
             // tbGbNaam
             // 
@@ -96,11 +100,20 @@
             this.tbWw.Size = new System.Drawing.Size(100, 20);
             this.tbWw.TabIndex = 6;
             // 
+            // Tekenbox
+            // 
+            this.Tekenbox.Location = new System.Drawing.Point(303, 36);
+            this.Tekenbox.Name = "Tekenbox";
+            this.Tekenbox.Size = new System.Drawing.Size(148, 199);
+            this.Tekenbox.TabIndex = 7;
+            this.Tekenbox.TabStop = false;
+            // 
             // jeugd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 253);
+            this.ClientSize = new System.Drawing.Size(495, 264);
+            this.Controls.Add(this.Tekenbox);
             this.Controls.Add(this.tbWw);
             this.Controls.Add(this.tbGbNaam);
             this.Controls.Add(this.btnRegistreer);
@@ -110,6 +123,7 @@
             this.Controls.Add(this.lblGbnaam);
             this.Name = "jeugd";
             this.Text = "jeugd";
+            ((System.ComponentModel.ISupportInitialize)(this.Tekenbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +138,6 @@
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.TextBox tbGbNaam;
         private System.Windows.Forms.TextBox tbWw;
+        private System.Windows.Forms.PictureBox Tekenbox;
     }
 }

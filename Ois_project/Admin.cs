@@ -29,5 +29,11 @@ namespace Ois_project
             PopupTrainer openform = new PopupTrainer();
             openform.Show();
         }
+
+        private void btnAccVerwijder_Click(object sender, EventArgs e)
+        {
+            Accountverwijderen openform = new Accountverwijderen();
+            openform.Show();
+        }
     }
 }

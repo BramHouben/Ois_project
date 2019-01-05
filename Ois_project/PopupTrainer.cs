@@ -7,6 +7,7 @@ namespace Ois_project
     {
         private Connectie conn = new Connectie();
         private Trainer newtrainer = new Trainer();
+
         public PopupTrainer()
         {
             conn.OpenConn();

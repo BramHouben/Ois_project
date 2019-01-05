@@ -9,42 +9,62 @@ namespace Ois_project
         private string GbNaam;
         private string Wachtwoord;
         private string wwHash;
+        private string Naam;
+        //private bool checkww;
 
-        public void inloggen()
+        public Inlogregistratie()
+        {
+   
+        }
+        public Inlogregistratie(string gbNaam, string wachtwoord, string naam)
+        {
+            GbNaam = gbNaam;
+            Wachtwoord = wachtwoord;
+            Naam = naam;
+        }
+
+        public bool inloggen(string gbNaam, string wachtwoord)
         {
             conn.OpenConn();
-            string Username = "Select gebruikers_ww from user where gebruikers_naam='" + GbNaam + "'";
+            string Username = "Select lid_gb_ww from lid where lid_gb_mail='" + gbNaam + "'";
 
             MySqlCommand command1 = new MySqlCommand(Username, conn.connectiestring());
 
             var hashie = command1.ExecuteScalar().ToString();
 
-            bool controle = BCrypt.Net.BCrypt.CheckPassword(Wachtwoord, hashie);
+            bool controle = BCrypt.Net.BCrypt.CheckPassword(wachtwoord, hashie);
+            if (controle == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool registreren()
         {
+            conn.OpenConn();
             wwHash = BCrypt.Net.BCrypt.HashPassword(Wachtwoord, BCrypt.Net.BCrypt.GenerateSalt(12));
-            String query = "INSERT INTO User (gebruikers_naam,gebruikers_ww) VALUES (@gebruikers_naam,@gebruikers_ww)";
+            String query = "INSERT INTO lid (lid_gb_mail,lid_gb_ww, lid_naam, team_id) VALUES (@lid_gb_mail,@lid_gb_ww, @lid_naam, @team_id)";
 
             using (MySqlCommand command = new MySqlCommand(query, conn.connectiestring()))
             {
                 try
                 {
-                    conn.OpenConn();
-                    command.Parameters.AddWithValue("@gebruikers_naam", GbNaam);
-                    command.Parameters.AddWithValue("@gebruikers_ww", wwHash);
+                    command.Parameters.AddWithValue("@lid_gb_mail", GbNaam);
+                    command.Parameters.AddWithValue("@lid_gb_ww", wwHash);
+                    command.Parameters.AddWithValue("@lid_naam", Naam);
+                    command.Parameters.AddWithValue("@team_id", 0);
 
-                    MySqlCommand cmd = new MySqlCommand("Select count(*) from user where gebruikers_naam= @gebruikers_naam", conn.connectiestring());
-                    cmd.Parameters.AddWithValue("@gebruikers_naam", this.GbNaam);
+                    MySqlCommand cmd = new MySqlCommand("Select count(*) from lid where lid_gb_mail= @lid_gb_mail", conn.connectiestring());
+                    cmd.Parameters.AddWithValue("@lid_gb_mail", this.GbNaam);
                     var gbnaamexist = cmd.ExecuteScalar();
                     int test = Convert.ToInt32(gbnaamexist);
                     if (test >= 1)
                     {
                         return false;
-                        //
-                        //txbGbnaam.ResetText();
-                        // txbWW.ResetText();
                     }
                     else
                     {
@@ -54,7 +74,7 @@ namespace Ois_project
                         if (result < 0)
                         {
                             return false;
-                            //       MessageBox.Show("Error inserting data into Database!");
+                            //      MessageBox.Show("Error inserting data into Database!");
                         }
                         else
                         {
@@ -67,7 +87,7 @@ namespace Ois_project
                     Console.WriteLine(fout.Message);
                 }
             }
-            conn.CloseConnection();
+
             return registreren();
         }
     }
