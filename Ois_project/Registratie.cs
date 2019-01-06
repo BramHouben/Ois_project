@@ -13,7 +13,7 @@ namespace Ois_project
         private void btnRegistratie_Click(object sender, EventArgs e)
         {
             Connectie conn = new Connectie();
-            Inlogregistratie inlog = new Inlogregistratie(tbGbNaam.Text, tbWw.Text, tbNaam.Text);
+            Inlogregistratie inlog = new Inlogregistratie(tbGbNaam.Text, tbWw.Text, tbNaam.Text, datumpikkerGBdatum.Text, datumpikker_lidsinds.Text, tbAdres.Text);
            
 
             bool result = inlog.registreren();

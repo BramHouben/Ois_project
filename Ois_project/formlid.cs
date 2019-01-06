@@ -12,14 +12,21 @@ namespace Ois_project
 {
     public partial class formlid : Form
     {
+        
+        private string GBnaam;
+        //  gebruiker data laten zien
         public formlid(string gbnaam)
         {
             InitializeComponent();
-            //label1.Text = 
-
+            GBnaam = gbnaam;
+            krijgengegevens();
         }
 
-
+        private void krijgengegevens()
+        {
+            
+            label1.Text = GBnaam;
+        }
 
 
 

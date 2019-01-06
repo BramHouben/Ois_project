@@ -87,7 +87,7 @@
     <Compile Include="Hoofdpagina.Designer.cs">
       <DependentUpon>Hoofdpagina.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Inlogregistratie.cs" />
+    <Compile Include="Classes\lid.cs" />
     <Compile Include="jeugd.cs">
       <SubType>Form</SubType>
     </Compile>
