@@ -32,6 +32,7 @@ namespace Ois_project
 
         public bool insertTrainer()
         {
+            conn.OpenConn();
             var command = conn.connectiestring().CreateCommand();
             command.Parameters.AddWithValue("@trainer_naam", naam);
             command.Parameters.AddWithValue("@trainer_leeftijd", leeftijd);
@@ -42,7 +43,9 @@ namespace Ois_project
             {
                 command.ExecuteNonQuery();
             }
+            conn.CloseConnection();
             return result;
+
         }
 
         public int krijgenteamid(string trainer_naam)
@@ -53,6 +56,7 @@ namespace Ois_project
              "SELECT team_id from trainer where trainer_naam = '" + trainer_naam + "'", conn.connectiestring());
 
             gekozenid = (int)cm5.ExecuteScalar();
+            conn.CloseConnection();
             return gekozenid;
         }
 
@@ -67,6 +71,7 @@ namespace Ois_project
 
         public bool checktrainer()
         {
+            conn.OpenConn();
             MySqlCommand checkvoor3trainers = new MySqlCommand("select count(*) from trainer where team_id = " + team_id + " ", conn.connectiestring());
             //int UserExist = (int)checkvoor3trainers.ExecuteScalar();
 
@@ -84,11 +89,14 @@ namespace Ois_project
 
         public DataSet krijgenteams()
         {
+            conn.OpenConn();
             DataSet ds = new DataSet();
             MySqlDataAdapter adapter = new MySqlDataAdapter(
             "SELECT team_id, team_naam from team", conn.connectiestring());
             adapter.Fill(ds);
+            conn.CloseConnection();
             return ds;
+            
         }
 
         public IEnumerable<string> krijgtrainers()

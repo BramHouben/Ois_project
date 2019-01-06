@@ -12,21 +12,21 @@ namespace Ois_project
         private string wwHash;
         private string Naam;
         private string Adres;
-       private string Geslacht;
+        private string Geslacht;
         private string Lid_sinds;
-       // private int Huidig_team;
+
+        // private int Huidig_team;
         private string Gb_datum;
-       private DateTime gbdatum2;
-       private DateTime lid_sinds2;
+
+        private DateTime gbdatum2;
+        private DateTime lid_sinds2;
         //private bool checkww;
         //voor data
 
-
-
         public lid()
         {
-   
         }
+
         public lid(string gbNaam, string wachtwoord, string naam, string gb_datum, string lid_sinds, string adres, string geslacht)
         {
             GbNaam = gbNaam;
@@ -37,6 +37,7 @@ namespace Ois_project
             Lid_sinds = lid_sinds;
             Geslacht = geslacht;
         }
+
         // inloggen van een lid
         public bool inloggen(string gbNaam, string wachtwoord)
         {
@@ -57,11 +58,34 @@ namespace Ois_project
                 return false;
             }
         }
+        public DataSet krijgenledenzonderteam()
+        {
+            conn.OpenConn();
+            DataSet tablelid = new DataSet();
+            MySqlDataAdapter lidadapter = new MySqlDataAdapter(
+            "SELECT lid_naam, lid_id from lid where team_id = " + 0 + "", conn.connectiestring());
+            lidadapter.Fill(tablelid);
+            return tablelid;
+        }
+
+        public void geventeam(int team_id, int speler_id)
+        {
+            conn.OpenConn();
+            string updatequery = "update lid set team_id=@team_id where lid_id = @lid_id";
+            MySqlCommand updatecommand = new MySqlCommand(updatequery, conn.connectiestring());
+            updatecommand.Parameters.AddWithValue("@team_id", team_id);
+            updatecommand.Parameters.AddWithValue("@lid_id", speler_id);
+            updatecommand.ExecuteNonQuery();
+            conn.CloseConnection();
+        }
+
+
+
 
         public void datumOmzetten()
         {
             // string datum omzetten
-          
+
             if (!DateTime.TryParse(Gb_datum, out gbdatum2))
             {
                 Console.WriteLine(gbdatum2);
@@ -69,7 +93,6 @@ namespace Ois_project
             else
             {
                 Console.WriteLine("fout met dattum");
-
             }
             if (!DateTime.TryParse(Lid_sinds, out lid_sinds2))
             {
@@ -78,9 +101,9 @@ namespace Ois_project
             else
             {
                 Console.WriteLine("fout met dattum");
-
             }
         }
+
         // hier laat ik alle data van een lid zien in formlid
         public void displaygegevens(string gb_naam)
         {
@@ -92,15 +115,13 @@ namespace Ois_project
                 dr.Read();
 
                 // alles aangeven wat wat is
-                 pNaam = dr.GetString(1);
-                 PteamId = dr.GetString(2);
-                 PEmail = dr.GetString(3);
-                 PLid_sinds = dr.GetString(5);
-                 PAdres = dr.GetString(6);
-                 PGBdatum = dr.GetString(8);
+                pNaam = dr.GetString(1);
+                PteamId = dr.GetString(2);
+                PEmail = dr.GetString(3);
+                PLid_sinds = dr.GetString(5);
+                PAdres = dr.GetString(6);
+                PGBdatum = dr.GetString(8);
                 Pgeslacht = dr.GetString(7);
-    
-               
             }
             catch (Exception ex)
             {
@@ -114,6 +135,7 @@ namespace Ois_project
 
         // properties , weet niet zeker of dit goed is:
         public string pNaam { get; set; }
+
         public string PteamId { get; set; }
         public string PEmail { get; set; }
         public string PLid_sinds { get; set; }
@@ -125,7 +147,6 @@ namespace Ois_project
         // Registeren van een lid
         public bool registreren()
         {
-
             conn.OpenConn();
             wwHash = BCrypt.Net.BCrypt.HashPassword(Wachtwoord, BCrypt.Net.BCrypt.GenerateSalt(12));
             String query = "INSERT INTO lid (lid_gb_mail,lid_gb_ww, lid_naam, team_id, lid_sinds, adres, gb_datum, geslacht) VALUES (@lid_gb_mail,@lid_gb_ww, @lid_naam, @team_id, @lid_sinds, @adres, @gb_datum, @geslacht)";
@@ -143,7 +164,6 @@ namespace Ois_project
                     command.Parameters.AddWithValue("@adres", Adres);
                     command.Parameters.AddWithValue("@gb_datum", gbdatum2);
                     command.Parameters.AddWithValue("@geslacht", Geslacht);
-
 
                     MySqlCommand cmd = new MySqlCommand("Select count(*) from lid where lid_gb_mail= @lid_gb_mail", conn.connectiestring());
                     cmd.Parameters.AddWithValue("@lid_gb_mail", this.GbNaam);

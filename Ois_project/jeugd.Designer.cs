@@ -88,16 +88,16 @@
             // 
             // tbGbNaam
             // 
-            this.tbGbNaam.Location = new System.Drawing.Point(181, 70);
+            this.tbGbNaam.Location = new System.Drawing.Point(130, 67);
             this.tbGbNaam.Name = "tbGbNaam";
-            this.tbGbNaam.Size = new System.Drawing.Size(100, 20);
+            this.tbGbNaam.Size = new System.Drawing.Size(151, 20);
             this.tbGbNaam.TabIndex = 5;
             // 
             // tbWw
             // 
-            this.tbWw.Location = new System.Drawing.Point(181, 122);
+            this.tbWw.Location = new System.Drawing.Point(130, 119);
             this.tbWw.Name = "tbWw";
-            this.tbWw.Size = new System.Drawing.Size(100, 20);
+            this.tbWw.Size = new System.Drawing.Size(151, 20);
             this.tbWw.TabIndex = 6;
             this.tbWw.UseSystemPasswordChar = true;
             // 

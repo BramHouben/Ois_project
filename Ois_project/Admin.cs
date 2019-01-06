@@ -35,5 +35,17 @@ namespace Ois_project
             Accountverwijderen openform = new Accountverwijderen();
             openform.Show();
         }
+
+        private void btngeefTeam_Click(object sender, EventArgs e)
+        {
+            geventeam openform = new geventeam();
+            openform.Show();
+        }
+
+        //private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    Inlogform openform = new Inlogform();
+        //    openform.Show();
+        //}
     }
 }

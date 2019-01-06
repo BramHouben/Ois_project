@@ -50,7 +50,7 @@
             // 
             this.tbWw.Location = new System.Drawing.Point(111, 68);
             this.tbWw.Name = "tbWw";
-            this.tbWw.Size = new System.Drawing.Size(171, 20);
+            this.tbWw.Size = new System.Drawing.Size(226, 20);
             this.tbWw.TabIndex = 11;
             this.tbWw.UseSystemPasswordChar = true;
             // 
@@ -58,7 +58,7 @@
             // 
             this.tbGbNaam.Location = new System.Drawing.Point(111, 30);
             this.tbGbNaam.Name = "tbGbNaam";
-            this.tbGbNaam.Size = new System.Drawing.Size(171, 20);
+            this.tbGbNaam.Size = new System.Drawing.Size(226, 20);
             this.tbGbNaam.TabIndex = 10;
             // 
             // btnRegistratie
@@ -102,14 +102,14 @@
             // 
             this.tbNaam.Location = new System.Drawing.Point(111, 103);
             this.tbNaam.Name = "tbNaam";
-            this.tbNaam.Size = new System.Drawing.Size(171, 20);
+            this.tbNaam.Size = new System.Drawing.Size(226, 20);
             this.tbNaam.TabIndex = 13;
             // 
             // datumpikker_lidsinds
             // 
             this.datumpikker_lidsinds.Location = new System.Drawing.Point(111, 182);
             this.datumpikker_lidsinds.Name = "datumpikker_lidsinds";
-            this.datumpikker_lidsinds.Size = new System.Drawing.Size(200, 20);
+            this.datumpikker_lidsinds.Size = new System.Drawing.Size(226, 20);
             this.datumpikker_lidsinds.TabIndex = 14;
             // 
             // label1
@@ -134,7 +134,7 @@
             // 
             this.tbAdres.Location = new System.Drawing.Point(111, 212);
             this.tbAdres.Name = "tbAdres";
-            this.tbAdres.Size = new System.Drawing.Size(171, 20);
+            this.tbAdres.Size = new System.Drawing.Size(226, 20);
             this.tbAdres.TabIndex = 17;
             // 
             // rbMan
@@ -181,14 +181,14 @@
             // 
             this.datumpikkerGBdatum.Location = new System.Drawing.Point(111, 139);
             this.datumpikkerGBdatum.Name = "datumpikkerGBdatum";
-            this.datumpikkerGBdatum.Size = new System.Drawing.Size(200, 20);
+            this.datumpikkerGBdatum.Size = new System.Drawing.Size(226, 20);
             this.datumpikkerGBdatum.TabIndex = 22;
             // 
             // Registratie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 339);
+            this.ClientSize = new System.Drawing.Size(383, 339);
             this.Controls.Add(this.datumpikkerGBdatum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rbVrouw);

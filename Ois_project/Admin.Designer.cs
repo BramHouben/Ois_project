@@ -31,6 +31,7 @@
             this.btnTeamToevoegen = new System.Windows.Forms.Button();
             this.btntrainer_aanmaken = new System.Windows.Forms.Button();
             this.btnAccVerwijder = new System.Windows.Forms.Button();
+            this.btngeefTeam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTeamToevoegen
@@ -63,12 +64,23 @@
             this.btnAccVerwijder.UseVisualStyleBackColor = true;
             this.btnAccVerwijder.Click += new System.EventHandler(this.btnAccVerwijder_Click);
             // 
+            // btngeefTeam
+            // 
+            this.btngeefTeam.Location = new System.Drawing.Point(495, 13);
+            this.btngeefTeam.Name = "btngeefTeam";
+            this.btngeefTeam.Size = new System.Drawing.Size(147, 45);
+            this.btngeefTeam.TabIndex = 3;
+            this.btngeefTeam.Text = "Team geven aan speler";
+            this.btngeefTeam.UseVisualStyleBackColor = true;
+            this.btngeefTeam.Click += new System.EventHandler(this.btngeefTeam_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(505, 65);
+            this.ClientSize = new System.Drawing.Size(662, 65);
+            this.Controls.Add(this.btngeefTeam);
             this.Controls.Add(this.btnAccVerwijder);
             this.Controls.Add(this.btntrainer_aanmaken);
             this.Controls.Add(this.btnTeamToevoegen);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button btnTeamToevoegen;
         private System.Windows.Forms.Button btntrainer_aanmaken;
         private System.Windows.Forms.Button btnAccVerwijder;
+        private System.Windows.Forms.Button btngeefTeam;
     }
 }
