@@ -13,8 +13,18 @@ namespace Ois_project
         private void btnRegistratie_Click(object sender, EventArgs e)
         {
             Connectie conn = new Connectie();
-            Inlogregistratie inlog = new Inlogregistratie(tbGbNaam.Text, tbWw.Text, tbNaam.Text, datumpikkerGBdatum.Text, datumpikker_lidsinds.Text, tbAdres.Text);
-           
+
+            // geslacht krijgen
+            string geslacht = "";
+            bool isChecked = rbMan.Checked;
+            if (isChecked)
+                geslacht = rbMan.Text;
+            else
+            {
+                geslacht = rbVrouw.Text;
+            }
+            // nieuwe inloggegevens lid
+            lid inlog = new lid(tbGbNaam.Text, tbWw.Text, tbNaam.Text, datumpikkerGBdatum.Text, datumpikker_lidsinds.Text, tbAdres.Text, geslacht);
 
             bool result = inlog.registreren();
             if (result == true)

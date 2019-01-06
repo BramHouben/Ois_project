@@ -74,7 +74,7 @@
             this.Controls.Add(this.btnJeugd);
             this.Controls.Add(this.btnTrainer);
             this.Name = "Inlogform";
-            this.Text = "inlog";
+            this.Text = "Hoofdpagina";
             this.ResumeLayout(false);
 
         }

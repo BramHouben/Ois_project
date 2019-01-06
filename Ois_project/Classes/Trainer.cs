@@ -3,19 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ois_project
 {
-    class Trainer
+    internal class Trainer
     {
         private Connectie conn = new Connectie();
-               
+
         public Trainer()
         {
-
         }
+
         //overloaden
         public Trainer(string naam, string team, int leeftijd, int team_id)
         {
@@ -24,13 +22,13 @@ namespace Ois_project
             this.leeftijd = leeftijd;
             this.team_id = team_id;
         }
+
         private string naam;
         private string team;
         private int leeftijd;
         private int team_id;
+        private int gekozenid;
         //private  bool checkaantal;
-
-
 
         public bool insertTrainer()
         {
@@ -45,43 +43,45 @@ namespace Ois_project
                 command.ExecuteNonQuery();
             }
             return result;
-           
         }
 
-        public DataSet selecttrainer()
+        public int krijgenteamid(string trainer_naam)
         {
-            DataSet sd = new DataSet();
-            MySqlDataAdapter adapter2 = new MySqlDataAdapter(
-            "SELECT trainer_naam, trainer_id from trainer", conn.connectiestring());
-            adapter2.Fill(sd);
-            return sd;
+            conn.OpenConn();
+            // DataSet sd4 = new DataSet();
+            MySqlCommand cm5 = new MySqlCommand(
+             "SELECT team_id from trainer where trainer_naam = '" + trainer_naam + "'", conn.connectiestring());
+
+            gekozenid = (int)cm5.ExecuteScalar();
+            return gekozenid;
         }
-        public DataTable tableleden()
+
+        public DataTable krijgenledentrainer()
         {
-            DataTable table = new DataTable();
+            DataTable tablelid = new DataTable();
             MySqlDataAdapter adapter3 = new MySqlDataAdapter(
-             "SELECT team_id, team_naam from team", conn.connectiestring());
-            adapter3.Fill(table);
-            return table;
+            "SELECT lid_naam, lid_gb_mail, adres, lid_sinds,gb_datum from lid where team_id = '" + gekozenid + "'", conn.connectiestring());
+            adapter3.Fill(tablelid);
+            return tablelid;
         }
 
-       public bool checktrainer()
+        public bool checktrainer()
         {
-            
-            MySqlCommand checkvoor3trainers = new MySqlCommand("select count(*) from trainer where team_id = "+team_id+" ", conn.connectiestring());
+            MySqlCommand checkvoor3trainers = new MySqlCommand("select count(*) from trainer where team_id = " + team_id + " ", conn.connectiestring());
             //int UserExist = (int)checkvoor3trainers.ExecuteScalar();
 
             int result = Convert.ToInt32(checkvoor3trainers.ExecuteScalar());
             if (result >= 3)
             {
-              return true;
+                return true;
             }
             else
             {
-              return false;
+                return false;
             }
             //return checktrainer();
         }
+
         public DataSet krijgenteams()
         {
             DataSet ds = new DataSet();
@@ -91,5 +91,31 @@ namespace Ois_project
             return ds;
         }
 
+        public IEnumerable<string> krijgtrainers()
+        {
+            //List<string> mijnlijst = new List<string>();
+            //mijnlijst.Add
+
+            List<string> trainernamen = new List<string>();
+
+            try
+            {
+                string query = "select trainer_naam from trainer";
+                conn.OpenConn();
+                DataTable tap = new DataTable();
+                new MySqlDataAdapter(query, conn.connectiestring()).Fill(tap);
+                trainernamen = tap.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("trainer_naam")).ToList();
+            }
+            catch (Exception)
+            {
+                //Exception
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.CloseConnection();
+            }
+            return trainernamen;
+        }
     }
 }

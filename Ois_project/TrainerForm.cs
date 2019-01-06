@@ -11,20 +11,18 @@ namespace Ois_project
         public TrainerForm()
         {
             InitializeComponent();
-            conn.OpenConn();
-            this.lbTrainer.DataSource = newTrainer.selecttrainer().Tables[0];
-            this.lbTrainer.DisplayMember = "trainer_naam";
-            this.lbTrainer.ValueMember = "trainer_id";
-            datagrid1.DataSource = newTrainer.tableleden();
+
+            listBox1.DataSource = newTrainer.krijgtrainers();
         }
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            string trainer = lbTrainer.GetItemText(lbTrainer.SelectedValue);
-            Console.WriteLine(trainer);
-            conn.CloseConnection();
-            this.Close();
+            conn.OpenConn();
 
+            string id = listBox1.GetItemText(listBox1.SelectedValue);
+            newTrainer.krijgenteamid(id);
+
+            datagrid1.DataSource = newTrainer.krijgenledentrainer();
         }
     }
 }

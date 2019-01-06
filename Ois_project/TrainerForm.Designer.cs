@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.datagrid1 = new System.Windows.Forms.DataGridView();
-            this.lbTrainer = new System.Windows.Forms.ListBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,31 +42,31 @@
             this.datagrid1.Size = new System.Drawing.Size(703, 331);
             this.datagrid1.TabIndex = 0;
             // 
-            // lbTrainer
-            // 
-            this.lbTrainer.FormattingEnabled = true;
-            this.lbTrainer.Location = new System.Drawing.Point(21, 12);
-            this.lbTrainer.Name = "lbTrainer";
-            this.lbTrainer.Size = new System.Drawing.Size(120, 69);
-            this.lbTrainer.TabIndex = 1;
-            // 
             // btnTest
             // 
             this.btnTest.Location = new System.Drawing.Point(221, 12);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.Size = new System.Drawing.Size(107, 23);
             this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "KLIK";
+            this.btnTest.Text = "Jouw korfballers:";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(380, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 3;
             // 
             // TrainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.lbTrainer);
             this.Controls.Add(this.datagrid1);
             this.Name = "TrainerForm";
             this.Text = "TrainerForm";
@@ -78,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView datagrid1;
-        private System.Windows.Forms.ListBox lbTrainer;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

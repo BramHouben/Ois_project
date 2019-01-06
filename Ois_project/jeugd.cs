@@ -21,7 +21,7 @@ namespace Ois_project
         private void btnInlog_Click(object sender, EventArgs e)
         {
 
-            Inlogregistratie inlog = new Inlogregistratie();
+            lid inlog = new lid();
             //inlog.inloggen(tbGbNaam.Text, tbWw.Text);
             bool result = inlog.inloggen(tbGbNaam.Text, tbWw.Text);
             if (result == true)

@@ -12,7 +12,7 @@ namespace Ois_project
 {
     public partial class formlid : Form
     {
-        
+        lid leden = new lid();
         private string GBnaam;
         //  gebruiker data laten zien
         public formlid(string gbnaam)
@@ -24,11 +24,20 @@ namespace Ois_project
 
         private void krijgengegevens()
         {
-            
-            label1.Text = GBnaam;
+            leden.displaygegevens(GBnaam);
+            label1.Text = leden.pNaam;
+            label2.Text = leden.PEmail;
+            label3.Text = leden.PGBdatum;
+            label4.Text = leden.PAdres;
+            label5.Text = leden.PLid_sinds;
+            label6.Text = leden.PteamId;
+            label14.Text = leden.Pgeslacht;
         }
 
-
-
+        private void formlid_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Inlogform newform = new Inlogform();
+            newform.Show();
+        }
     }
 }

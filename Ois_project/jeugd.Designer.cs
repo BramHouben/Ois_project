@@ -99,6 +99,7 @@
             this.tbWw.Name = "tbWw";
             this.tbWw.Size = new System.Drawing.Size(100, 20);
             this.tbWw.TabIndex = 6;
+            this.tbWw.UseSystemPasswordChar = true;
             // 
             // Tekenbox
             // 
